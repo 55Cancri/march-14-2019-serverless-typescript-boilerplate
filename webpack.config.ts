@@ -109,9 +109,26 @@ const config: webpack.Configuration = {
   // determine webpack optimizations
   mode: env,
 
+  /*
+  see:
+  [HMR] Updated modules:
+    [HMR]  - ./../MyModule1.jsx
+    [HMR]  - ./../MyModule2.jsx
+
+  instead of:
+  [HMR] Updated modules:
+    [HMR]  - 1009
+    [HMR]  - 1007
+
+  Note: this invalidates the new webpack.NamedModulesPlugin()
+   */
+  optimization: {
+    namedModules: true,
+  },
+
   // enable sourcemaps for debugging webpacks output
-  devtool: 'eval-source-map',
-  // devtool: 'source-map',
+  // devtool: 'eval-source-map',
+  devtool: 'source-map',
 
   // directory tree to start bundling files
   entry: { app: './client/app/index.tsx' },
@@ -225,7 +242,12 @@ const config: webpack.Configuration = {
               babelrc: false,
               // cache previous babel transpilations
               cacheDirectory: true,
-              presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-typescript',
+                '@babel/preset-react',
+                '@babel/plugin-transform-react-jsx-source', // add source file and line numbers to jsx
+              ],
               plugins: ['react-hot-loader/babel'],
             },
           },
