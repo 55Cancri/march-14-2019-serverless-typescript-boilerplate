@@ -1,0 +1,78 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true,
+
+    // enables typescript to parse react
+    "jsx": "react",
+
+    // enables functions such as Object.entries
+    "lib": ["es2018", "es6", "dom"],
+    "moduleResolution": "node",
+
+    // needed to recognize import keyword
+    "esModuleInterop": true,
+
+    // allow imports without *
+    "allowSyntheticDefaultImports": true,
+    // needed for "paths" option to work
+    "baseUrl": ".",
+    // alias long file imports
+    "paths": {
+      // "@apricot": ["./client/app/components/apricot"],
+      // "@apricot/*": ["./client/app/components/apricot/*"],
+      // "@components/*": ["./client/app/components/*"],
+      // "@components": ["./client/app/components"],
+      // "@actions/*": ["./client/app/actions/*"],
+      // "@reducers": ["./client/app/Redux/Reducers"],
+      // "@reducers/*": ["./client/app/Redux/Reducers/*"],
+      // "@constants/*": ["./client/app/constants/*"],
+      "@pages/*": ["./client/app/components/pages/*"],
+      "@routes": ["./client/app/routers/Routes"],
+      "@helpers": ["./client/app/helpers"],
+      "@helpers/*": ["./client/app/helpers/*"]
+      // "@interfaces": ["./client/app/interfaces"],
+      // "@interfaces/*": ["./client/app/interfaces/*"],
+      // "@redux": ["./client/app/Redux"],
+      // "@redux/*": ["./client/app/Redux/*"],
+      // "@definitions": ["./client/app/Definitions"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
+
+// {
+//   "compilerOptions": {
+//     "outDir": "./dist/",
+//     // "sourceMap": true,
+//     "noImplicitAny": false,
+//     "allowSyntheticDefaultImports": true,
+//     // this one was important. When set to es6, it stopped recognizing imports
+//     "esModuleInterop": true,
+//     "target": "es6",
+// "module": "commonjs",
+// "moduleResolution": "node",
+//     "typeRoots": ["node_modules/@types"],
+//     "jsx": "react",
+//     "lib": ["es2018", "es6", "dom"],
+//     "baseUrl": ".",
+//     "paths": {
+//       "@apricot": ["./client/app/components/apricot"],
+//       "@apricot/*": ["./client/app/components/apricot/*"],
+//       "@components/*": ["./client/app/components/*"],
+//       "@components": ["./client/app/components"],
+//       "@actions/*": ["./client/app/actions/*"],
+//       "@reducers": ["./client/app/Redux/Reducers"],
+//       "@reducers/*": ["./client/app/Redux/Reducers/*"],
+//       "@constants/*": ["./client/app/constants/*"],
+//       "@helpers": ["client/app/helpers"],
+//       "@helpers/*": ["client/app/helpers/*"],
+//       "@interfaces": ["./client/app/interfaces"],
+//       "@interfaces/*": ["./client/app/interfaces/*"],
+//       "@redux": ["./client/app/Redux"],
+//       "@redux/*": ["./client/app/Redux/*"],
+//       "@definitions": ["./client/app/Definitions"]
+//     }
+//   }
+// }

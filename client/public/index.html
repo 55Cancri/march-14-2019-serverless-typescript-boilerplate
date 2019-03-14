@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Collegeboard</title>
+
+    <!-- fontawesome user icons near red button -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+    <!-- modal animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    />
+
+    <!-- css for global header and footer widgets -->
+    <link
+      rel="stylesheet"
+      href="https://widgets.fed-nonprod.collegeboard.org/master/apricot.min.css"
+      type="text/css"
+      media="all"
+    />
+
+    <!-- latest apricot css -->
+    <link
+      rel="stylesheet"
+      href="https://mango.collegeboard.org/apricot/prod/3.3.0/css/apricot.min.css"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+
+    <!-- global header element -->
+    <div id="globalHeader" class="lv-globalheader-init"></div>
+
+    <!-- div where entire react app will be injected -->
+    <div id="root"></div>
+
+    <!-- jquery is needed for levity.js to work -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- aws sdk -->
+    <script
+      type="text/javascript"
+      src="https://sdk.amazonaws.com/js/aws-sdk-2.7.20.min.js"
+    ></script>
+
+    <script>
+      window.cb = {
+        core: {
+          utils: {
+            DeploymentProfile: {
+              iam: { aws: { cbAWSDomains: [], cbFullRoleOrgInfo: true } }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- global header widget -->
+    <script
+      type="text/javascript"
+      src="https://widgets.fed-nonprod.collegeboard.org/master/main.js"
+    ></script>
+  </body>
+</html>
