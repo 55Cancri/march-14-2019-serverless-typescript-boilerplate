@@ -242,13 +242,20 @@ const config: webpack.Configuration = {
               babelrc: false,
               // cache previous babel transpilations
               cacheDirectory: true,
-              presets: [
-                '@babel/preset-env',
-                '@babel/preset-typescript',
-                '@babel/preset-react',
+              presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
+              plugins: [
+                'react-hot-loader/babel',
                 '@babel/plugin-transform-react-jsx-source', // add source file and line numbers to jsx
+                // fixes regenerator runtime error
+                [
+                  '@babel/plugin-transform-runtime',
+                  {
+                    regenerator: true,
+                  },
+                ],
+                // fixes exports is not defined error
+                '@babel/plugin-transform-modules-commonjs',
               ],
-              plugins: ['react-hot-loader/babel'],
             },
           },
           {
